@@ -1,0 +1,25 @@
+
+
+<div class="container">
+<h1>Restaurants</h1>
+  <div class="d-flex justify-content-between py-3">
+    <h1>Restaurants</h1>
+    <%= link_to "Add a Restaurant", new_restaurant_path, class: "btn btn-outline-dark btn-sm mb-4"  %>
+  </div>
+
+   <% @restaurants.each do |restaurant| %>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div class="card">
+           <div class="card-body">
+          <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+          <p> <%= restaurant.category %></p>
+          <p><%= restaurant.address %></p>
+          <p><%= restaurant.phone_number %></p>
+           </div>
+        </div>
+      </li>
+    </ul>
+   <% end %>
+
+</div>
